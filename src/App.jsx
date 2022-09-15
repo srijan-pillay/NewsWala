@@ -3,6 +3,7 @@ import Nav from './Nav';
 import Stories from './Stories';
 import ScrollButton from './ScrolTo';
 import AddToNote from './AddToNote';
+import Search from './Search';
 import './style.css'
 
 
@@ -14,6 +15,7 @@ export default function () {
   return (
     <div>
         <Nav/> 
+        <Search/>
        <AddToNote/>
         <Stories/>
         <ScrollButton/>

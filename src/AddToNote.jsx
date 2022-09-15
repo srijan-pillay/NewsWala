@@ -5,8 +5,8 @@ let auth = "unKnown";
 
 const AddToNote = () => {
   const { arr, rmPost } = useGlobal();
-  console.log("arr");
-  console.log(arr);
+  // console.log("arr");
+   console.log(arr);
 
   if (arr.length === 0) {
     return (
@@ -70,12 +70,8 @@ const AddToNote = () => {
           ></button>
         </div>
         <div className="offcanvas-body">
-          {arr.map((curr, i) => {
-            {
-              if (curr[0]?.author) {
-                auth = curr[0]?.author;
-              }
-            }
+           {arr?.map((curr, i) => {
+           
             if (curr[0]?.title != undefined) {
               return (
                 <>
@@ -83,7 +79,7 @@ const AddToNote = () => {
                     <div className="card cardCust  Notes">
                       <div className="card-body">
                         <h6 className="card-text">{curr[0]?.title}</h6>
-                        <h6>BY {auth}</h6>
+                        <h6>BY {curr[0]?.source['name']}</h6>
                       </div>
                       <div className="card-body">
                         <a href={curr[0]?.url} className="card-link">

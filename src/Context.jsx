@@ -11,22 +11,28 @@
 import React,{useContext, useReducer,useEffect} from "react";
 import reducer from "./reducer";
 
- 
-let api = 'https://newsapi.org/v2/top-headlines?country=in&apiKey=efb7f7a6e2104f90881267e89052e57f' ;
 
+ 
+// let api2 = 'https://newsdata.io/api/1/news?apikey=pub_11042a2fb441a0756e59a0c00d01c824a04b4&'
+
+
+const apiKey = 'b52ac3e9a19e22d4ab23f4103d1d14ea';
+
+
+let api = `https://gnews.io/api/v4/search?q=`
 
 
  
 const initialState = {
     isLoading : true,
-    query :'html',
-    nbpages : 0,
-    page : 0,
+    q :'india',
     hits : [],
     arr:[],
     a:[],
 
 };
+
+
 
 // create context
 const AppContext = React.createContext();
@@ -35,52 +41,54 @@ const AppContext = React.createContext();
 // create provider function 
 const AppProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer,initialState);
-
-    
    
     const fetchApiData = async(url) =>{
     
         dispatch({type : 'loading'});
+        
+
         try{
             const res = await fetch(url);
             const data = await res.json();
-           // console.log(data);
+            //console.log(data);
             dispatch({type : 'get_news',
                     payload :{
                     Narticles : data.articles,
-                        //NnbPages : data.nbPages,
                     },
                  });
+                     
         }
         catch{
             console.log('error');
         }
     };
-
+ 
     const removePost = (post_id) => {
         dispatch({type:'remove_Post',payload : post_id})
     }
-
+    
     const addPost = (post_id) => {
         dispatch({type:'add_Post',payload : post_id});
         
     }
-
+    
     const rmPost = (post_id) => {
-        dispatch({type:'rm_Post',payload : post_id});
-        
+        console.log(post_id);
+        dispatch({type:'rm_Post',payload : post_id});   
     }
-   
+    
+    const search = (val) => {
+        if(val == undefined)val = 'india'
+        dispatch({type:'searchPost',payload : val});
+    }
 
    
     useEffect(()=>{
-        //  fetchApiData(`${api}query=${state.query}&page=${state.page}` );
-        fetchApiData(api);
-        
-    },[]);
+        fetchApiData(`${api}${state.q}&token=${apiKey}&lang=en`);
+    },[state.q]);
 
     return (
-        <AppContext.Provider value = {{...state,removePost,addPost,rmPost}} >
+        <AppContext.Provider value = {{...state,removePost,addPost,rmPost,search}} >
             {children}
         </AppContext.Provider>
     );

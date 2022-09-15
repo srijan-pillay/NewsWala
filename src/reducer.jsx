@@ -12,6 +12,7 @@ const reducer = (state,action) => {
                 hits : action.payload.Narticles,
                 
             };
+             
         case 'remove_Post' :
             return {
                 ...state,
@@ -28,7 +29,14 @@ const reducer = (state,action) => {
             ...state,
             arr : [...state.arr,state.arr.splice(action.payload,1)],
             
-        };       
+        };
+        
+        case 'searchPost' :
+            return{
+                ...state,
+                q  : action.payload,
+                
+            }; 
           
     }
    
