@@ -12,12 +12,12 @@ const AddToNote = () => {
     return (
       <>
         <button
-          className="btn btn-primary"
+          className="btn btn-primary myNoteBtn"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasRight"
           aria-controls="offcanvasRight"
-        >
+         >
           MY NOTES
         </button>
 
@@ -45,7 +45,7 @@ const AddToNote = () => {
   return (
     <>
       <button
-        className="btn btn-primary"
+        className="btn btn-primary myNoteBtn"
         type="button"
         data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasRight"

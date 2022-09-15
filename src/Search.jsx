@@ -13,9 +13,10 @@ const Search = () => {
   return (
     <>
         {/* <input type='text' className = 's' placeholder='enter topic'onKeyUp={(e)=>search(e.target.value)}/> */}
-        <input type='text' className = 's' placeholder='enter topic' name='forsearch'  ref={inputRef}/>
-
-        <button onClick={clickO}>search</button>
+        <span className='Sb'>
+            <input type='text' className = 'sea' placeholder='Enter Topic' name='forsearch'  ref={inputRef}/>
+            <button className='searchBtn' onClick={clickO}>Search</button>
+        </span>
     </>
     );
 }

@@ -22,7 +22,7 @@ export default function Nav() {
     
       <div>
         
-    <marquee behavior="scroll" direction="left" scrollamount="12" style={{color : 'blue'}} >{s}</marquee>
+    {/* <marquee behavior="scroll" direction="left" scrollamount="12" style={{color : 'wheat'}} >{s}</marquee> */}
   
       </div>
     );  

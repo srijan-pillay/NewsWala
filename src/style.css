@@ -1,14 +1,31 @@
-
+body{
+  width: 100vw;
+  background-color: rgb(73, 68, 68);
+ 
+}
   .cardCust{
     width: 45rem;
+  
     margin: auto;
     margin: 20px auto;
     z-index: 2;
+    background-color: #EEEEEE;
+}
+a{
+  color: black;
 }
 .cardI{
     box-shadow: 4px 4px 2px 2px grey;
 }
+button{
+  background-color: #bececf;
+  border-radius: 10px;
+}
 
+button:hover{
+  background-color: #666699;
+  color: wheat;
+}
 .myBtn {
     display: none;
     position: fixed;
@@ -18,7 +35,6 @@
     font-size: 18px;
     border: none;
     outline: none;
-    background-color: red;
     color: white;
     cursor: pointer;
     padding: 15px;
@@ -27,9 +43,26 @@
   }
   .Notes{
     width: 100%;
-
   }
 
+  .myNoteBtn{
+    margin: 10px;
+    /* position: fixed; */
+  }
+
+.Sb{
+  display:flex ;
+  justify-content: center;
+}
+.sea{
+  width: 35rem;
+  text-align: center;
+  font-size: large;
+  border-radius: 10px;
+}
+.searchBtn{
+  width: 10rem;
+}
 
 
 

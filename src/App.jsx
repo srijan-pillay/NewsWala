@@ -15,8 +15,8 @@ export default function () {
   return (
     <div>
         <Nav/> 
-        <Search/>
        <AddToNote/>
+        <Search/>
         <Stories/>
         <ScrollButton/>
         

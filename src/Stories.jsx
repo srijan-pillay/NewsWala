@@ -3,13 +3,13 @@ import { useGlobal } from "./Context";
 const Stories = () => {
   const { hits, isLoading, removePost, addPost } = useGlobal();
   // console.log(hits);
-  // if(isLoading){
-  // return(
-  //     <>
-  //     <h1>LOADING ...</h1>
-  //     </>
-  // );
-  // }
+  if(isLoading){
+  return(
+      <>
+      <h1 style={{color : 'wheat'}}>LOADING ...</h1>
+      </>
+  );
+  }
 
   let ima = "";
 
