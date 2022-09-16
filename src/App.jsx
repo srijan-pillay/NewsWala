@@ -20,6 +20,8 @@ export default function () {
         <Search/>
         <Stories/>
         <ScrollButton/>
+
+       {/*  <Meme/> */}
         
     </div>
   );

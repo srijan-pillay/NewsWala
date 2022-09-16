@@ -75,6 +75,7 @@ button:hover{
   grid-template: 40px 40px / 1fr 1fr;
   gap: 17px;
   margin-bottom: 17px;
+  margin-right: 0;
 }
 
 .form--input {
@@ -95,12 +96,31 @@ button:hover{
 }
 
 .meme {
-  position: relative;
+justify-content: center;
+  
+  position: absolute; 
+  align-items: center;
+
+
+
+
+
+   margin-right: 5vw;
+  max-width: 65vw;
+  margin-left:30vw; 
+
+  
+ 
+ 
+ 
 }
 
 .meme--image {
   max-width: 100%;
   border-radius: 3px;
+  max-width:65vw;
+  
+ 
 }
 
 .meme--text {
