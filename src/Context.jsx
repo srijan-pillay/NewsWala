@@ -25,7 +25,7 @@ let api = `https://gnews.io/api/v4/search?q=`
  
 const initialState = {
     isLoading : true,
-    q :'india',
+    q :'sports',
     hits : [],
     arr:[],
     a:[],
@@ -78,12 +78,8 @@ const AppProvider = ({children}) => {
     }
     
     const search = (val) => {
-<<<<<<< HEAD
     
         if(val == '')val = 'india'
-=======
-         if(val == '')val = 'india'
->>>>>>> 8ce5b8b3194489ca84713fb08b368a02aa25d57d
         dispatch({type:'searchPost',payload : val});
     }
 

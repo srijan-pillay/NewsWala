@@ -1,30 +1,41 @@
-import React from "react"
+import { useGlobal } from "./Context"
+import React from "react";
 
 
 export default function Meme() {
+    const {hits} = useGlobal();
+   
+   let ima = [];
+
+   hits?.map((curr,i)=>{
+    ima.push(curr.image);
+   })
+
+    
+
     
     const [meme, setMeme] = React.useState({
         topText: "",
         bottomText: "",
-        randomImage: "http://i.imgflip.com/1bij.jpg" 
+        randomImage: 'https://thumbs.dreamstime.com/b/news-newspapers-folded-stacked-word-wooden-block-puzzle-dice-concept-newspaper-media-press-release-42301371.jpg' 
     })
-    const [allMemes, setAllMemes] = React.useState([])
+    // const [allMemes, setAllMemes] = React.useState([])
     
 
     
-    React.useEffect(() => {
-        fetch("https://api.imgflip.com/get_memes")
-            .then(res => res.json())
-            .then(data => setAllMemes(data.data.memes))
-    }, [])
+    // React.useEffect(() => {
+    //     fetch("https://api.imgflip.com/get_memes")
+    //         .then(res => res.json())
+    //         .then(data => setAllMemes(data.data.memes))
+    // }, [])
     
     
     
     
     
     function getMemeImage() {
-        const randomNumber = Math.floor(Math.random() * allMemes.length)
-        const url = allMemes[randomNumber].url
+        const randomNumber = Math.floor(Math.random() * ima.length)
+        const url = ima[randomNumber]
         setMeme(prevMeme => ({
             ...prevMeme,
             randomImage: url
@@ -73,4 +84,5 @@ export default function Meme() {
             </div>
         </main>
     )
+    
 }
