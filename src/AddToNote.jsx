@@ -6,7 +6,7 @@ let auth = "unKnown";
 const AddToNote = () => {
   const { arr, rmPost } = useGlobal();
   // console.log("arr");
-   console.log(arr);
+  // console.log(arr);
 
   if (arr.length === 0) {
     return (

@@ -8,7 +8,8 @@ const Search = () => {
   
 
     const clickO = () =>{
-        search(inputRef.current.value);
+        //console.log(inputRef.current.value);
+         search(inputRef.current.value);
     }
   return (
     <>

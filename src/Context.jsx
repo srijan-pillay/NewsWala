@@ -78,7 +78,8 @@ const AppProvider = ({children}) => {
     }
     
     const search = (val) => {
-        if(val == undefined)val = 'india'
+    
+        if(val == '')val = 'india'
         dispatch({type:'searchPost',payload : val});
     }
 
