@@ -15,13 +15,13 @@ export default function () {
   
   return (
     <div>
-        {/* <Nav/> 
+        <Nav/> 
        <AddToNote/>
         <Search/>
         <Stories/>
-        <ScrollButton/> */}
+        <ScrollButton/>
 
-        <Meme/>
+        {/* <Meme/> */}
         
     </div>
   );

@@ -11,6 +11,9 @@ const Stories = () => {
   );
   }
 
+  if(hits.length === 0 ){
+    return <h1 style={{color : 'wheat'}}>NO DATA FOUND ...</h1>
+  }
   let ima = "";
 
   return (
