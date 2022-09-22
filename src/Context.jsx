@@ -60,7 +60,7 @@ const AppProvider = ({children}) => {
         }
         catch{
             return <h1>Sorry Some Error</h1>
-            console.log('error');
+            //console.log('error');
         }
     };
  

@@ -1,5 +1,6 @@
 import { useGlobal } from "./Context"
-import React from "react";
+import {useState} from "react";
+import  Search  from "./Search";
 
 
 export default function Meme() {
@@ -17,7 +18,7 @@ export default function Meme() {
     
 
     
-    const [meme, setMeme] = React.useState({
+    const [meme, setMeme] = useState({
         topText: "",
         bottomText: "",
         randomImage: 'https://thumbs.dreamstime.com/b/news-newspapers-folded-stacked-word-wooden-block-puzzle-dice-concept-newspaper-media-press-release-42301371.jpg' 
@@ -56,6 +57,7 @@ export default function Meme() {
     
     return (
         <main>
+        <Search/>
             <div className="form">
                 <input 
                     type="text"

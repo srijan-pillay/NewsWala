@@ -3,6 +3,7 @@ import { useGlobal } from "./Context";
 
 let auth = "unKnown";
 
+
 const AddToNote = () => {
   const { arr, rmPost } = useGlobal();
   // console.log("arr");
@@ -17,7 +18,7 @@ const AddToNote = () => {
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasRight"
           aria-controls="offcanvasRight"
-         >
+        >
           MY NOTES
         </button>
 
@@ -70,16 +71,15 @@ const AddToNote = () => {
           ></button>
         </div>
         <div className="offcanvas-body">
-           {arr?.map((curr, i) => {
-           
-            if (curr[0]?.title != undefined) {
+          {arr?.map((curr, i) => {
+            {if (curr[0]?.title != undefined) {
               return (
                 <>
                   <div key={i}>
                     <div className="card cardCust  Notes">
                       <div className="card-body">
                         <h6 className="card-text">{curr[0]?.title}</h6>
-                        <h6>BY {curr[0]?.source['name']}</h6>
+                        <h6>BY {curr[0]?.source["name"]}</h6>
                       </div>
                       <div className="card-body">
                         <a href={curr[0]?.url} className="card-link">
@@ -92,13 +92,29 @@ const AddToNote = () => {
                         >
                           Remove
                         </button>
+
+                        <a
+                          className="btn writeNote"
+                          data-bs-toggle="collapse"
+                          href="#collapseExample"
+                          role="button"
+                          aria-expanded="false"
+                          aria-controls="collapseExample"
+                        >
+                          Your Opinion
+                        </a>
+                        <div id="collapseExample"  className="collapse">
+                          <div className="card">
+                            <textarea rows={4} cols={50}></textarea>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </>
               );
             }
-          })}
+          }})}
         </div>
       </div>
     </>
